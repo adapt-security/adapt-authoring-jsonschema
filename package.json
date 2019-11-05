@@ -1,0 +1,16 @@
+{
+  "name": "adapt-authoring-jsonschema",
+  "version": "0.0.1",
+  "description": "Module to add support for the JSON schema specification",
+  "homepage": "https://github.com/adapt-security/adapt-authoring-jsonschema",
+  "main": "index.js",
+  "adapt_authoring": {
+    "module": true,
+    "documentation": {
+      "enable": true
+    }
+  },
+  "peerDependencies": {
+    "adapt-authoring-core": "git+https://github.com/adapt-security/adapt-authoring-core.git"
+  }
+}
