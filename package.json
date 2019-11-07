@@ -12,5 +12,9 @@
   },
   "peerDependencies": {
     "adapt-authoring-core": "git+https://github.com/adapt-security/adapt-authoring-core.git"
+  },
+  "dependencies": {
+    "ajv": "6.10.2",
+    "ajv-merge-patch": "4.1.0"
   }
 }
