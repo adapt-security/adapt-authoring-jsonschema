@@ -1,0 +1,7 @@
+{
+  "coreApiName": "jsonschema",
+  "module": true,
+  "documentation": {
+    "enable": true
+  }
+}
