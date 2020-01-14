@@ -1,5 +1,5 @@
 {
-  "coreApiName": "jsonschema",
+  "isEssential": true,
   "documentation": {
     "enable": true
   }
