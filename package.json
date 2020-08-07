@@ -16,7 +16,7 @@
     "adapt-authoring-core": "github:adapt-security/adapt-authoring-core.git"
   },
   "dependencies": {
-    "ajv": "6.10.2",
+    "ajv": "^6.12.3",
     "fs-extra": "8.1.0",
     "glob": "7.1.6",
     "lodash": "4.17.15",
