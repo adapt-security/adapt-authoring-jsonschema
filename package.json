@@ -4,7 +4,7 @@
   "description": "Module to add support for the JSON schema specification",
   "homepage": "https://github.com/adaptlearning/adapt-authoring-jsonschema",
   "license": "GPL-3.0",
-  "repository": "github:adaptlearning/adapt-authoring-jsonschema",
+  "repository": "adaptlearning/adapt-authoring-jsonschema",
   "main": "index.js",
   "adapt_authoring": {
     "module": true,
@@ -13,7 +13,7 @@
     }
   },
   "peerDependencies": {
-    "adapt-authoring-core": "github:adapt-security/adapt-authoring-core.git"
+    "adapt-authoring-core": "adapt-security/adapt-authoring-core"
   },
   "dependencies": {
     "ajv": "^7.0.0-beta.7",
