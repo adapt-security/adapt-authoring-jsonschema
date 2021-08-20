@@ -3,7 +3,7 @@
   "documentation": {
     "enable": true,
     "manualSections": {
-      "schemas-introduction.md": "The basics"
+      "schemas-introduction.md": "basics"
     }
   }
 }
