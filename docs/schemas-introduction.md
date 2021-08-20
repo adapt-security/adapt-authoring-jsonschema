@@ -110,4 +110,4 @@ e.g.
 
 ```
 
-##### For more in-depth information on JSON schemas, the [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/) is a great place to start.
+**For more in-depth information on JSON schemas, the [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/) ebook is a great place to start.**
