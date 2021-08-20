@@ -1,6 +1,9 @@
 {
   "isEssential": true,
   "documentation": {
-    "enable": true
+    "enable": true,
+    "manualSections": {
+      "schemas-introduction.md": "The basics"
+    }
   }
 }
