@@ -2,8 +2,10 @@
   "isEssential": true,
   "documentation": {
     "enable": true,
+    "manualPlugins": ["docs/plugins/schemas-reference.js"],
     "manualSections": {
-      "schemas-introduction.md": "basics"
+      "schemas-introduction.md": "basics",
+      "schemas-reference.md": "advanced"
     }
   }
 }
