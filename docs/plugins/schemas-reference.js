@@ -61,18 +61,21 @@ class SchemasReference {
     if(required) {
       output += `<div class="required">Fields in bold are required.</div>\n\n`;
     }
-    const table = Object.entries(properties).reduce((output, [attr, config]) => {
-      let row = '';
-      row +=  `<tr class="${config.default === undefined && required && required.includes(attr) ? 'required' : ''}">\n`;
-      row += `<td>${attr}</td>\n`;
-      row += `<td>${config.type}</td>\n`;
-      row += `<td>${config.default !== undefined ? this.defaultToMd(config.default) : ''}</td>\n`;
-      row += `<td>${config.description || ''}</td>\n`;
-      row +=  `</tr>\n`;
-      return `${output}${row}`;
-    }, `<tr><th>Attribute</th><th>Type</th><th>Default</th><th>Description</th></tr>`);
-
+    const table = `<tr><th>Attribute</th><th>Type</th><th>Default</th><th>Description</th></tr>${this.tableRowsFromProps(properties, required)}`;
     return `${output}<table class="schema">${table}</table>`;
+  }
+  tableRowsFromProps(properties, required = [], parent) {
+    return Object.entries(properties).reduce((output, [attr, config]) => {
+      const attrKey = (parent ? parent + '.' : '') + attr;
+      output +=  `<tr class="${config.default === undefined && required && required.includes(attr) ? 'required' : ''}">\n`;
+      output += `<td>${attrKey}</td>\n`;
+      output += `<td>${config.type}</td>\n`;
+      output += `<td>${config.default !== undefined ? this.defaultToMd(config.default) : ''}</td>\n`;
+      output += `<td>${config.description || ' '}</td>\n`;
+      output +=  `</tr>\n`;
+      if(config.properties) output += this.tableRowsFromProps(config.properties, config.required, attrKey);
+      return output;
+    }, '');
   }
   /**
    * Returns a string formatted nicely for markdown
