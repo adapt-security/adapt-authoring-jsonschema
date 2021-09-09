@@ -5,7 +5,7 @@
     "manualPlugins": ["docs/plugins/schemas-reference.js"],
     "manualSections": {
       "schemas-introduction.md": "basics",
-      "schemas-reference.md": "advanced"
+      "schemas-reference.md": "reference"
     }
   }
 }
