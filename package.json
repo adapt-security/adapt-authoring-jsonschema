@@ -6,12 +6,6 @@
   "license": "GPL-3.0",
   "repository": "adaptlearning/adapt-authoring-jsonschema",
   "main": "index.js",
-  "adapt_authoring": {
-    "module": true,
-    "documentation": {
-      "enable": true
-    }
-  },
   "peerDependencies": {
     "adapt-authoring-core": "adapt-security/adapt-authoring-core"
   },
