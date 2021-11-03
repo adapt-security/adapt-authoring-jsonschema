@@ -3,7 +3,7 @@
   "documentation": {
     "enable": true,
     "manualPlugins": ["docs/plugins/schemas-reference.js"],
-    "manualSections": {
+    "manualPages": {
       "schemas-introduction.md": "basics",
       "schemas-reference.md": "reference"
     }
