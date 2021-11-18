@@ -1,2 +1,1 @@
-const JsonSchemaModule = require('./lib/jsonSchemaModule');
-module.exports = JsonSchemaModule;
+export { default } from './lib/jsonSchemaModule.js';
