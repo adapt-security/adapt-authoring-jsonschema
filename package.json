@@ -6,7 +6,7 @@
   "license": "GPL-3.0",
   "type": "module",
   "main": "index.js",
-  "repository": "adaptlearning/adapt-authoring-jsonschema",
+  "repository": "github:adapt-security/adapt-authoring-jsonschema",
   "dependencies": {
     "ajv": "^8.3.0",
     "glob": "7.1.6",
