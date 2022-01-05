@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-class SchemasReference {
+export default class SchemasReference {
   constructor(app, config, outputDir) {
     this.app = app;
     this.outputDir = outputDir;
@@ -84,12 +84,10 @@ class SchemasReference {
     return `<pre>${JSON.stringify(val)}</pre>`;
   }
   writeFile(data) {
-    let file = fs.readFileSync(path.join(__dirname, 'schemas-reference.md')).toString();
+    let file = fs.readFileSync(new URL('schemas-reference.md', import.meta.url)).toString();
     const outputPath = path.join(this.outputDir, 'schemas-reference.md');
     Object.entries(data).forEach(([key,value]) => file = file.replace(`{{{${key}}}}`, value));
     fs.writeFileSync(outputPath, file);
     this.customFiles.push(outputPath);
   }
 }
-
-module.exports = SchemasReference;
