@@ -1,0 +1,13 @@
+{
+  "MISSING_SCHEMA_NAME": {
+    "description": "Schema name is not defined",
+    "statusCode": 400
+  },
+  "SCHEMA_LOAD_FAILED": {
+    "data": {
+      "name": "Schema name"
+    },
+    "description": "Failed to load a JSON schema",
+    "statusCode": 500
+  }
+}
