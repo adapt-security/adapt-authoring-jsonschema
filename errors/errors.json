@@ -1,4 +1,11 @@
 {
+  "VALIDATION_FAILED": {
+    "data": {
+      "errors": "all validation errors"
+    },
+    "description": "Data validation failed",
+    "statusCode": 400
+  },
   "MISSING_SCHEMA_NAME": {
     "description": "Schema name is not defined",
     "statusCode": 400
