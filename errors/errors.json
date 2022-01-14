@@ -1,7 +1,8 @@
 {
   "VALIDATION_FAILED": {
     "data": {
-      "errors": "all validation errors"
+      "errors": "all validation errors",
+      "schemaName": "Schema name"
     },
     "description": "Data validation failed",
     "statusCode": 400
@@ -12,7 +13,7 @@
   },
   "SCHEMA_LOAD_FAILED": {
     "data": {
-      "name": "Schema name"
+      "schemaName": "Schema name"
     },
     "description": "Failed to load a JSON schema",
     "statusCode": 500
