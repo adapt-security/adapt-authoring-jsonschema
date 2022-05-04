@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 export default class SchemasReference {
-  constructor(app, config, outputDir) {
+  constructor(app, config) {
     this.app = app;
-    this.outputDir = outputDir;
+    this.outputDir = config.outputDir;
     this.customFiles = [];
     this.schemas = {};
   }
