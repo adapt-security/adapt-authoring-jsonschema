@@ -1,6 +1,7 @@
 {
   "VALIDATION_FAILED": {
     "data": {
+      "data": "the data failing validation",
       "errors": "all validation errors",
       "schemaName": "Schema name"
     },
