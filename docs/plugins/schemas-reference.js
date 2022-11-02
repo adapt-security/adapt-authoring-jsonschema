@@ -1,38 +1,29 @@
-import fs from 'fs';
-import path from 'path';
-
 export default class SchemasReference {
-  constructor(app, config) {
+  constructor(app, config, dir, utils) {
     this.app = app;
-    this.outputDir = config.outputDir;
-    this.customFiles = [];
-    this.schemas = {};
+    this.utils = utils;
   }
   async run() {
-    await this.loadSchemas();
-    this.writeFile({
-      'TABLE_OF_CONTENTS': this.generateTOC(),
-      'LIST': this.generateList()
-    });
+    this.schemas = await this.loadSchemas();
+    this.manualFile = 'schemas-reference.md';
+    this.contents = Object.values(this.schemas).map(s => s.$anchor);
+    this.replace = { 'LIST': this.generateList() };
   }
   async loadSchemas() {
+    const schemas = {};
     const schema = await this.app.waitForModule('jsonschema');
     const schemaNames = Object.keys(schema.schemaPaths).sort((a,b) => a.localeCompare(b));
-    for (let s of schemaNames) this.schemas[s] = await schema.getSchema(s, false)
-  }
-  generateTOC() {
-    let output = '';
-    Object.keys(this.schemas).forEach((dep) => output += `- [${dep}](#${dep.toLowerCase()})\n`);
-    output += '\n';
-    return output;
+    for (let s of schemaNames) schemas[s] = await schema.getSchema(s, false)
+    return schemas;
   }
   generateList() {
-    let output = '';
-
-    Object.entries(this.schemas).forEach(([dep, schema]) => {
-      output += `<h3 id="${dep.toLowerCase()}" class="dep">${dep}</h3>\n\n`;
-      output += `${this.schemaToMd(schema)}\n\n`;
-    });
+    return Object.entries(this.schemas).reduce((output, [dep, schema]) => {
+      return `${output}<h3 id="${dep.toLowerCase()}" class="dep">${dep}</h3>
+      
+      ${this.schemaToMd(schema)}
+      
+      `;
+    }, '');
 
    return output;
   }
@@ -82,12 +73,5 @@ export default class SchemasReference {
    */
   defaultToMd(val) {
     return `<pre>${JSON.stringify(val)}</pre>`;
-  }
-  writeFile(data) {
-    let file = fs.readFileSync(new URL('schemas-reference.md', import.meta.url)).toString();
-    const outputPath = path.join(this.outputDir, 'schemas-reference.md');
-    Object.entries(data).forEach(([key,value]) => file = file.replace(`{{{${key}}}}`, value));
-    fs.writeFileSync(outputPath, file);
-    this.customFiles.push(outputPath);
   }
 }

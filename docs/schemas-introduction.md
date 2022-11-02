@@ -12,7 +12,7 @@ As with architectural blueprints, a database schema defines how data should be s
 
 Schemas are **MASSIVELY** useful because they set the expectations for data moving into and out of an application. This benefits third-parties because it makes it easier to design interactions with the application, and it benefits the application itself because it can assume that data entering from external sources is in an expected and valid format.
 
-_**Note**: schemas only become useful when a 'validation' process is used, which compares data to the schema which defines that data. Without validation, we have no idea whether the data is safe to use or not._
+> **Note**: schemas only become useful when a 'validation' process is used, which compares data to the schema which defines that data. Without validation, we have no idea whether the data is safe to use or not.
 
 ## Why JSON Schemas?
 _**TLDR;** JSON just 'works' with Javascript._
