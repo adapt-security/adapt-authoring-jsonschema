@@ -3,8 +3,8 @@
   "type": "object",
   "properties": {
     "formatOverrides": {
-      "type": "object",
       "description": "Custom RegExp overrides for Ajv string formats",
+      "type": "object",
       "default": {}
     }
   }
