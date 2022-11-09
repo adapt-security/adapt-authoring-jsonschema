@@ -4,8 +4,6 @@ This page documents all schemas defined in the authoring tool core bundle. Where
 
 The below list can be used for convenient navigation.
 
-### Quick navigation
-
 {{{TABLE_OF_CONTENTS}}}
 
 {{{LIST}}}
