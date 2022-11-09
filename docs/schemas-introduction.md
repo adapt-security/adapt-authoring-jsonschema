@@ -40,74 +40,94 @@ Combined, these types allow a huge amount of flexibility in the way that you wan
 e.g.
 ```
 {
-  "$anchor": "component",
+  "$anchor": "example-schema",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "required": ["_component"],
+  "required": ["myRequiredAttribute"],
   "properties": {
-    "_component": {
+    "myRequiredAttribute": {
       "type": "string",
     },
-    "_layout": {
-      "type": "string",
-      "default": ""
+    "aStringAttribute": {
+      "type": "number",
+      "default": 12345
     },
-    "_isResetOnRevisit": {
+    "aStringAttributeWithRestrictedValues": {
       "type": "string",
       "default": "false",
       "enum": ["false", "soft", "hard"],
     },
-    "_disableAccessibilityState": {
-      "type": "boolean",
-      "default": false,
-    },
-    "_accessibility": {
+    "nestedObjectAttribute": {
       "type": "object",
       "default": {},
       "properties": {
-        "_isEnabled": {
+        "nestedProperty": {
           "type": "boolean",
           "default": true
-        },
-        "_isSkipNavigationEnabled": {
-          "type": "boolean",
-          "default": true
-        },
-        "_ariaLevels": {
-          "type": "object",
-          "default": {},
-          "properties": {
-            "_menu": {
-              "type": "number",
-              "title": "Menu",
-              "default": 1
-            },
-            "_page": {
-              "type": "number",
-              "default": 1
-            },
-            "_article": {
-              "type": "number",
-              "title": "Article",
-              "default": 2
-            },
-            "_block": {
-              "type": "number",
-              "title": "Block",
-              "default": 3
-            },
-            "_component": {
-              "type": "number",
-              "title": "Component",
-              "default": 4
-            }
-          }
         }
       }
     }
   }
 }
-
 ```
 
-**For more in-depth information on JSON schemas, the [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/) ebook is a great place to start.**
+> For more in-depth information on JSON schemas, the [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/) ebook is a great place to start.
+
+### Custom schema keywords
+
+In addition to the standard keywords defined in the JSON schema specification, the Adapt authoring tool jsonschema module defines a number of extra custom keywords which add extra convenient functionality when validating incoming data.
+
+The following custom keywords are available:
+
+#### `isDate`
+This keyword will parse any string value into a valid JavaScript Date.
+
+#### `isDirectory`
+This keyword will resolve any path values using a number of default directory values. This is very useful when making use of the existing app directories (e.g. you want to store data in the app's temp folder). The following are supported values:
+- `$ROOT` will resolve to the main app root folder
+- `$DATA` will resolve to the app's data folder
+- `$TEMP` will resolve to the app's temp folder
+
+#### `isInternal`
+This keyword will ensure that the attribute is **not** returned when a web API request is made. This is useful for restricting sensitive information like passwords. Note that this keyword only applies to the web APIs, and not when accessing data programatically.
+
+#### `isReadOnly`
+This keyword will ensures that the attribute is **not** modified when a web API request is made. Note that this keyword only applies to the web APIs, and not when accessing data programatically.
+
+#### `isTimeMs`
+This keyword is very useful when defining time values, as it allows a human-readable input value to be automatically converted into milliseconds.
+
+
+
+```
+"$anchor": "example-schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["myRequiredAttribute"],
+  "properties": {
+    "myDateAttribute": {
+      "type": "string",
+      "isDate": true,
+      "default": "1970-01-01T00:00:00.000Z"
+    },
+    "myDirectoryAttribute": {
+      "type": "string",
+      "isDirectory": true,
+      "default": "$TEMP/myfolder" // will be replace $TEMP with the correct path to the temp folder
+    },
+    "myInternalAttribute": {
+      "type": "string",
+      "isInternal": true
+    },
+    "myReadOnlyAttribute": {
+      "type": "string",
+      "isReadOnly": true
+    },
+    "myTimeAttribute": {
+      "type": "string",
+      "isTimeMs": true,
+      "default": "7d" // will be converted to the equivalent of 7 days in milliseconds (604800000)
+    }
+  }
+}
+```
