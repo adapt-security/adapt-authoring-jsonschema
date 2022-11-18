@@ -13,6 +13,9 @@
     "statusCode": 400
   },
   "MODIFY_PROTECTED_ATTR": {
+    "data": {
+      "attribute": "The protected attribute"
+    },
     "description": "Attempted to modify a protected data attribute",
     "statusCode": 400
   },
