@@ -1,5 +1,5 @@
 {
-  "isEssential": true,
+  "essentialType": "schema",
   "documentation": {
     "enable": true,
     "manualPlugins": ["docs/plugins/schemas-reference.js"],
