@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "_id": {
-      "description": "Course record unique ID",
+      "description": "Unique identifier",
       "type": "string",
       "isObjectId": true
     }
