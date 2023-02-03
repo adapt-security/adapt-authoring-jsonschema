@@ -4,6 +4,7 @@
     "enable": true,
     "manualPlugins": ["docs/plugins/schemas-reference.js"],
     "manualPages": {
+      "schema-examples.md": "reference",
       "schemas-introduction.md": "basics",
       "schemas-reference.md": "reference"
     }
