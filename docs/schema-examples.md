@@ -34,7 +34,7 @@ This page presents some example schema definitions (along with their UI represen
 ```
 "body": {
   "type": "string",
-  "title": "Body text",
+  "title": "Body",
   "default": "",
   "_adapt": {
     "translatable": true
@@ -50,10 +50,10 @@ This page presents some example schema definitions (along with their UI represen
 > Number values do not need custom `_backboneForms` configuration.
 
 ```
-"_pinLocation": {
+"_left": {
   "type": "number",
-  "title": "Hot graphic horizontal pin position",
-  "description": "Defined as a percentage",
+  "title": "Pin horizontal position (%)",
+  "description": "",
   "default": 0
 }
 ```
@@ -65,10 +65,10 @@ This page presents some example schema definitions (along with their UI represen
 > Boolean values do not need custom `_backboneForms` configuration.
 
 ```
-"_isEnabled": {
+"_isMobileTextBelowImage": {
   "type": "boolean",
-  "title": "Is enabled?",
-  "description": "Whether the feature should be enabled",
+  "title": "Move text area below image on mobile",
+  "description": "If enabled, on mobile, the text area drops below the image instead of being behind the strapline button",
   "default": false
 }
 ```
@@ -80,10 +80,11 @@ This page presents some example schema definitions (along with their UI represen
 In addition to the `type`, an asset sub-schema can define the type of the asset using the `media` property (see [this page](/schemas-introduction#custom-backbone-forms-properties) for more information).
 
 ```
-"_graphic": {
+"src": {
   "type": "string",
   "isObjectId": true,
-  "title": "Graphic image",
+  "title": "Source",
+  "description": "This is the image that appears behind the pins",
   "_backboneForms": {
     "type": "Asset",
     "media": "image"
@@ -96,15 +97,14 @@ In addition to the `type`, an asset sub-schema can define the type of the asset 
 ## Select
 
 ```
-"_itemLayout": {
+"_setCompletionOn": {
   "type": "string",
-  "title": "Item layout",
-  "description": "The layout of the item",
-  "default": "full-width",
+  "title": "Completion criteria",
+  "description": "Whether completion is based on the learner having viewed all the narrative items - or just having viewed the component",
+  "default": "allItems",
   "enum": [
-    "left",
-    "right",
-    "full-width"
+    "inview",
+    "allItems"
   ],
   "_backboneForms": "Select"
 }
@@ -120,7 +120,7 @@ In addition to the `type`, an asset sub-schema can define the type of the asset 
   "title": "Graphic",
   "default": {},
   "properties": {
-    ...
+    ...omitted for brevity
   }
 }
 ```
