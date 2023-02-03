@@ -6,7 +6,8 @@
     "manualPages": {
       "schema-examples.md": "reference",
       "schemas-introduction.md": "basics",
-      "schemas-reference.md": "reference"
+      "schemas-reference.md": "reference",
+      "writing-a-schema.md": "basics"
     }
   }
 }
