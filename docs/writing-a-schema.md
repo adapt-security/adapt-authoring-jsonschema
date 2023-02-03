@@ -1,8 +1,8 @@
 # Writing a schema
 
-> For some specific schema examples, see [this page](/schema-examples).
+This page outlines the various elements of an Adapt data schema, and gives tips on how to start writing your own schemas. If you're new to schemas, head over to [this page](/introduction-to-schemas), which goes over the basics.
 
-If you're new to schemas, head over to [this page](/introduction-to-schemas), which goes over the basics.
+> For some specific schema examples, see [this page](/schema-examples).
 
 ## Quick links
 - [Defining a schema](#defining-a-schema)
