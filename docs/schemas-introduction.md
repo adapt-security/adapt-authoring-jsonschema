@@ -78,7 +78,7 @@ e.g.
 }
 ```
 
-> For some specific schema examples, see [this page](#schema-examples).
+> For some specific schema examples, see [this page](/schema-examples).
 
 > For more in-depth information on JSON schemas, the [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/) ebook is a great place to start.
 
