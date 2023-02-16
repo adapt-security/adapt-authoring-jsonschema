@@ -6,6 +6,9 @@
   "license": "GPL-3.0",
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "at-schemacheck": "./bin/check.js"
+  },
   "repository": "github:adapt-security/adapt-authoring-jsonschema",
   "dependencies": {
     "ajv": "^8.3.0",
