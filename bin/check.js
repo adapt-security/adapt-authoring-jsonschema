@@ -25,10 +25,9 @@ async function check() {
       duplicates.forEach(([prop, schemas]) => console.log(` - ${prop}: ${schemas}`));
       console.log('');
       process.exitCode = 1;
-    } else {
-      console.log('No duplicates found.');
     }
   }));
+  if(process.exitCode !== 1) console.log('No duplicates found.');
   process.exit();
 }
 
