@@ -2,6 +2,17 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "enableCache": {
+      "description": "Whether schema data should be cached",
+      "type": "boolean",
+      "default": true
+    },
+    "cacheLifespan": {
+      "description": "The amount of time a cached schema should remain valid",
+      "type": "string",
+      "isTimeMs": true,
+      "default": "30s"
+    },
     "formatOverrides": {
       "description": "Custom RegExp overrides for Ajv string formats",
       "type": "object",
