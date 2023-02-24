@@ -13,7 +13,7 @@ export default class SchemasReference {
     const schemas = {};
     const schema = await this.app.waitForModule('jsonschema');
     const schemaNames = Object.keys(schema.schemaPaths).sort((a,b) => a.localeCompare(b));
-    for (let s of schemaNames) schemas[s] = await schema.getSchema(s, false)
+    for (let s of schemaNames) schemas[s] = await schema.getSchema(s, { applyExtensions: false })
     return schemas;
   }
   generateList() {
