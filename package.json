@@ -14,7 +14,8 @@
     "ajv": "^8.3.0",
     "glob": "7.1.6",
     "lodash": "^4.17.21",
-    "safe-regex": "2.1.1"
+    "safe-regex": "2.1.1",
+    "xss": "^1.0.14"
   },
   "peerDependencies": {
     "adapt-authoring-core": "github:adapt-security/adapt-authoring-core"
