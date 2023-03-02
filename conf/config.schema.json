@@ -7,12 +7,6 @@
       "type": "boolean",
       "default": true
     },
-    "cacheLifespan": {
-      "description": "The amount of time a cached schema should remain valid",
-      "type": "string",
-      "isTimeMs": true,
-      "default": "30s"
-    },
     "formatOverrides": {
       "description": "Custom RegExp overrides for Ajv string formats",
       "type": "object",
