@@ -6,15 +6,14 @@ export default class SchemasReference {
   async run() {
     this.schemas = await this.loadSchemas();
     this.manualFile = 'schemas-reference.md';
-    this.contents = Object.values(this.schemas).map(s => s.$anchor);
+    this.contents = Object.keys(this.schemas);
     this.replace = { 'LIST': this.generateList() };
   }
   async loadSchemas() {
-    const schemas = {};
     const schema = await this.app.waitForModule('jsonschema');
-    const schemaNames = Object.keys(schema.schemaPaths).sort((a,b) => a.localeCompare(b));
-    for (let s of schemaNames) schemas[s] = await schema.getSchema(s, { applyExtensions: false })
-    return schemas;
+    return Object.keys(schema.schemas)
+      .sort((a, b) => a.localeCompare(b))
+      .reduce((schemas, s) => Object.assign(schemas, { [s]: schema.schemas[s].raw }), {});
   }
   generateList() {
     return Object.entries(this.schemas).reduce((output, [dep, schema]) => {
@@ -24,8 +23,6 @@ export default class SchemasReference {
       
       `;
     }, '');
-
-   return output;
   }
   schemaToMd(schema) {
     let output = '';
