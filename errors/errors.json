@@ -18,6 +18,14 @@
     "description": "Attempted to modify a protected data attribute",
     "statusCode": 400
   },
+  "SCHEMA_EXISTS": {
+    "data": {
+      "filepath": "File path to the schema",
+      "schemaName": "Schema name"
+    },
+    "description": "A schema already exists with the specified name",
+    "statusCode": 400
+  },
   "SCHEMA_LOAD_FAILED": {
     "data": {
       "schemaName": "Schema name"
