@@ -13,8 +13,14 @@
       "default": {}
     },
     "xssWhitelist": {
-      "description": "Attributes which should be whitelisted when run through the XSS sanitiser",
-      "type": "object"
+      "description": "Attributes which should be whitelisted when run through the XSS sanitiser.",
+      "type": "object",
+      "default": {}
+    },
+    "xssWhitelistOverride": {
+      "description": "If set to false, the xssWhitelist value will EXTEND the default XSS whitelist. If set to true, it will REPLACE it.",
+      "type": "boolean",
+      "default": false
     }
   }
 }
