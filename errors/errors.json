@@ -7,6 +7,13 @@
     "description": "Invalid schema",
     "statusCode": 400
   },
+  "MISSING_SCHEMA": {
+    "data": {
+      "schemaName": "Schema name"
+    },
+    "description": "Schema is not registered in the cache",
+    "statusCode": 500
+  },
   "MISSING_SCHEMA_NAME": {
     "description": "Schema name is not defined",
     "statusCode": 400
