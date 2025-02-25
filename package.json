@@ -2,7 +2,7 @@
   "name": "adapt-authoring-jsonschema",
   "version": "0.0.1",
   "description": "Module to add support for the JSON schema specification",
-  "homepage": "https://github.com/adaptlearning/adapt-authoring-jsonschema",
+  "homepage": "https://github.com/adapt-security/adapt-authoring-jsonschema",
   "license": "GPL-3.0",
   "type": "module",
   "main": "index.js",
