@@ -1,6 +1,6 @@
 {
   "name": "adapt-authoring-jsonschema",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Module to add support for the JSON schema specification",
   "homepage": "https://github.com/adapt-security/adapt-authoring-jsonschema",
   "license": "GPL-3.0",
