@@ -15,7 +15,7 @@
   },
   "peerDependencies": {
     "adapt-authoring-config": "^1.1.4",
-    "adapt-authoring-core": "^1.7.0",
+    "adapt-authoring-core": "^2.0.0",
     "adapt-authoring-errors": "^1.1.2"
   },
   "peerDependenciesMeta": {
