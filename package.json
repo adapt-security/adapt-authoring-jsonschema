@@ -9,6 +9,9 @@
   "bin": {
     "at-schemacheck": "./bin/check.js"
   },
+  "scripts": {
+    "test": "node --test 'tests/**/*.spec.js'"
+  },
   "repository": "github:adapt-security/adapt-authoring-jsonschema",
   "dependencies": {
     "adapt-schemas": "github:cgkineo/adapt-schemas#issue/12"
@@ -51,18 +54,7 @@
       ],
       "@semantic-release/npm",
       "@semantic-release/github",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "package.json"
-          ],
-          "message": "Chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ]
+      "@semantic-release/git"
     ]
-  },
-  "scripts": {
-    "test": "node --test 'tests/**/*.spec.js'"
   }
 }
