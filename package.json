@@ -14,11 +14,11 @@
   },
   "repository": "github:adapt-security/adapt-authoring-jsonschema",
   "dependencies": {
+    "adapt-authoring-core": "^2.0.0",
     "adapt-schemas": "^1.2.0"
   },
   "peerDependencies": {
     "adapt-authoring-config": "^1.1.4",
-    "adapt-authoring-core": "^2.0.0",
     "adapt-authoring-errors": "^1.1.2"
   },
   "devDependencies": {
