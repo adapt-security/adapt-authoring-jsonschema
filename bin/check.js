@@ -33,6 +33,7 @@ async function check () {
 
 async function checkSchema (schema, usedKeys) {
   const props = schema.properties ?? schema?.$patch?.with?.properties ?? schema?.$merge?.with?.properties
+  if (!props) return
   Object.keys(props).forEach(p => {
     if (p === '_globals') return
     if (!usedKeys[p]) usedKeys[p] = []
