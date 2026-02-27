@@ -12,10 +12,10 @@ export default class SchemasReference {
   }
 
   async loadSchemas () {
-    const schema = await this.app.waitForModule('jsonschema')
-    return Object.keys(schema.schemas)
+    const { schemas, raw } = this.app.schemas
+    return Object.keys(schemas)
       .sort((a, b) => a.localeCompare(b))
-      .reduce((schemas, s) => Object.assign(schemas, { [s]: schema.schemas[s].raw }), {})
+      .reduce((m, s) => Object.assign(m, { [s]: raw[s] }), {})
   }
 
   generateList () {
