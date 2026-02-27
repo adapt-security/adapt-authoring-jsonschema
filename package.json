@@ -14,7 +14,7 @@
   },
   "repository": "github:adapt-security/adapt-authoring-jsonschema",
   "dependencies": {
-    "adapt-schemas": "github:cgkineo/adapt-schemas#issue/12"
+    "adapt-schemas": "^1.2.0"
   },
   "peerDependencies": {
     "adapt-authoring-config": "^1.1.4",
