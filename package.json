@@ -21,17 +21,6 @@
     "adapt-authoring-core": "^2.0.0",
     "adapt-authoring-errors": "^1.1.2"
   },
-  "peerDependenciesMeta": {
-    "adapt-authoring-config": {
-      "optional": true
-    },
-    "adapt-authoring-core": {
-      "optional": true
-    },
-    "adapt-authoring-errors": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-eslint": "^6.0.0",
