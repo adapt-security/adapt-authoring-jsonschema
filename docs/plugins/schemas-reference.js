@@ -1,9 +1,4 @@
 export default class SchemasReference {
-  constructor (appData, config, dir, utils) {
-    this.appData = appData
-    this.utils = utils
-  }
-
   async run () {
     this.schemas = await this.loadSchemas()
     this.manualFile = 'schemas-reference.md'
@@ -12,7 +7,7 @@ export default class SchemasReference {
   }
 
   async loadSchemas () {
-    const { schemas, raw } = this.appData.schemas
+    const { schemas, raw } = this.app.schemas
     return Object.keys(schemas)
       .sort((a, b) => a.localeCompare(b))
       .reduce((m, s) => Object.assign(m, { [s]: raw[s] }), {})
