@@ -85,9 +85,9 @@ describe('JsonSchemaModule', () => {
   })
 
   describe('#resetSchemaRegistry()', () => {
-    it('should call the library resetSchemaRegistry', async () => {
+    it('should call the library resetSchemaRegistry', () => {
       const { instance, mockSchemas } = createInstance()
-      await instance.resetSchemaRegistry()
+      instance.resetSchemaRegistry()
       assert.equal(mockSchemas.resetSchemaRegistry.mock.calls.length, 1)
     })
   })
