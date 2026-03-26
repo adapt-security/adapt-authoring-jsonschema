@@ -14,12 +14,8 @@
   },
   "repository": "github:adapt-security/adapt-authoring-jsonschema",
   "dependencies": {
-    "adapt-authoring-core": "^2.0.0",
+    "adapt-authoring-core": "^3.0.0",
     "adapt-schemas": "^3.1.0"
-  },
-  "peerDependencies": {
-    "adapt-authoring-config": "^1.1.4",
-    "adapt-authoring-errors": "^1.1.2"
   },
   "devDependencies": {
     "@adaptlearning/semantic-release-config": "^1.0.0",
